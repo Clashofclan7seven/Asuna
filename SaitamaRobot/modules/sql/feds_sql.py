@@ -5,6 +5,7 @@ from SaitamaRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
 
+global Chat;
 
 class Federations(BASE):
     __tablename__ = "feds"
