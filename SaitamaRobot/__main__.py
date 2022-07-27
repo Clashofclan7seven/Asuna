@@ -1,4 +1,3 @@
-global Chat;
 import importlib
 import time
 import re
@@ -360,7 +359,7 @@ def help_button(update, context):
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
-    chat = update.effective_chat  # type: Optional[Chat]
+    chat = update.effective_chat  
     args = update.effective_message.text.split(None, 1)
 
     # ONLY send help in PM
@@ -545,9 +544,9 @@ def settings_button(update: Update, context: CallbackContext):
 
 @run_async
 def get_settings(update: Update, context: CallbackContext):
-    chat = update.effective_chat  # type: Optional[Chat]
-    user = update.effective_user  # type: Optional[User]
-    msg = update.effective_message  # type: Optional[Message]
+    chat = update.effective_chat  
+    user = update.effective_user  
+    msg = update.effective_message 
 
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
@@ -578,7 +577,7 @@ def get_settings(update: Update, context: CallbackContext):
 @run_async
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
-    chat = update.effective_chat  # type: Optional[Chat]
+    chat = update.effective_chat  
     bot = context.bot
     if chat.type == "private":
         update.effective_message.reply_text(
@@ -611,7 +610,7 @@ def donate(update: Update, context: CallbackContext):
 
 
 def migrate_chats(update: Update, context: CallbackContext):
-    msg = update.effective_message  # type: Optional[Message]
+    msg = update.effective_message  
     if msg.migrate_to_chat_id:
         old_chat = update.effective_chat.id
         new_chat = msg.migrate_to_chat_id
