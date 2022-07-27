@@ -415,7 +415,7 @@ def gbanlist(update: Update, context: CallbackContext):
 
 def check_and_ban(update, user_id, should_message=True):
 
-    chat = update.effective_chat  # type: Optional[Chat]
+    chat = update.effective_chat  
     try:
         sw_ban = sw.get_ban(int(user_id))
     except:
