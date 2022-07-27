@@ -1,3 +1,4 @@
+global bot
 import csv
 import json
 import os
